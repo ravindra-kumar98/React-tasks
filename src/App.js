@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import PrimeNumber from "./pages/prime-number/PrimeNumber";
+import Layouts from "./pages/layouts/Layouts";
+import EvenOdd from "./pages/even-odd/EvenOdd";
+import Factorial from "./pages/factorial/Factorial";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route element={<Layouts />}>
+        <Route path="/" element={<PrimeNumber />} />
+        <Route path="/even-odd" element={<EvenOdd />} />
+        <Route path="/factorial" element={<Factorial />} />
+      </Route>
+    </Routes>
   );
 }
 
