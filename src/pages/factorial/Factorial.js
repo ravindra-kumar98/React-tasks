@@ -9,6 +9,9 @@ const Factorial = () => {
     if (number === 0) {
       return 1;
     }
+    if(number > 170){
+      return "Number is too large, please enter a number less than 171";
+    }
     return number * factorial(number - 1);
   };
   const handleChange = (e) => {
@@ -20,6 +23,7 @@ const Factorial = () => {
         <h2>Factorial</h2>
         <InputGroup className="mb-3">
           <Form.Control
+          type="number"
             placeholder="Enter a number"
             aria-label="Enter a number"
             aria-describedby="prime-number"

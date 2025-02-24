@@ -1,16 +1,21 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPen, faTrash, faCheck } from "@fortawesome/free-solid-svg-icons";
+import { faPen, faTrash, faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch } from "react-redux";
-import { removeTodo } from "../store/slice/TodoSlice";
+import { removeTodo, toggleTodo } from "../store/slice/TodoSlice";
 
 const TodoItems = ({ todos, onEdit }) => {
   const dispatch = useDispatch();
   const handleDlete = (id) => {
     dispatch(removeTodo(id));
   };
+  const handleCompletedTask =(id)=>{
+    dispatch(toggleTodo(id));
+  }
   return (
-    <ul>
+    <ul style={{maxHeight: '400px',
+      overflowY: 'auto',
+      overflowX: 'hidden',}}>
       {todos.map((todo) => (
         <li key={todo.id} className="todo-item">
           {todo.text}
@@ -33,14 +38,15 @@ const TodoItems = ({ todos, onEdit }) => {
                 cursor: "pointer",
               }}
             />
-            <FontAwesomeIcon
-              icon={faCheck}
+           <FontAwesomeIcon
+              icon={todo.completed ? faXmark : faCheck}
+              onClick={()=>handleCompletedTask(todo.id)}
               style={{
-                color: "#01a219",
+                color: todo.completed ? "#000" : "#01a219",
                 marginLeft: "10px",
                 cursor: "pointer",
               }}
-            />
+            /> 
           </span>
         </li>
       ))}

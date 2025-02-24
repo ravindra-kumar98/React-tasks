@@ -26,6 +26,7 @@ const PrimeNumber = () => {
         <h2>Prime Number</h2>
         <InputGroup className="mb-3">
           <Form.Control
+          type="number"
             placeholder="Enter a number"
             aria-label="Enter a number"
             aria-describedby="prime-number"
