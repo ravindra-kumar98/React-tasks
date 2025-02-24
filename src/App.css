@@ -1,4 +1,4 @@
-.prime-number {
+section {
   width: 100%;
   height: calc(100vh - 96px);
   display: flex;
@@ -23,4 +23,51 @@ p {
   border-color: none;
   outline: 0;
   box-shadow: none;
+}
+
+.count {
+  font-size: 1.5rem;
+  font-weight: 500;
+  width: 200px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.sub-btn {
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+section {
+  flex-direction: column;
+}
+
+li.todo-item {
+  display: flex;
+  justify-content: space-between;
+  width: 380px;
+  background-color: #d9d9d9;
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
 }
